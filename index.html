@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welcome — AI Email Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #ffffff;
+    color: #0a1e4d;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+    text-align: center;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+    column-gap: 10px;
+  }
+
+  .title img {
+    width: 48px;
+    height: 48px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .try {
+    margin-bottom: 80px;
+  }
+
+  .try-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 16px;
+  }
+
+  .try-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .try-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0a1e4d;
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(10, 30, 77, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .try-link:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 6px 16px rgba(10, 30, 77, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .try-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  .step {
+    margin-bottom: 80px;
+  }
+
+  .step-text {
+    font-size: 18px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slider-row {
+    position: relative;
+    padding: 0 52px;
+  }
+
+  .slider {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(10, 30, 77, 0.18), 0 4px 12px rgba(10, 30, 77, 0.10);
+  }
+
+  .slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    color: #9ca3af;
+    font-size: 14px;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    color: #0a1e4d;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(10, 30, 77, 0.10);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .slider-arrow--prev {
+    left: 0;
+  }
+
+  .slider-arrow--next {
+    right: 0;
+  }
+
+  .slider-arrow:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+  }
+
+  .slider-arrow:active {
+    transform: translateY(-50%) scale(0.92);
+  }
+
+  .slider-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      padding: 20px 24px;
+      gap: 24px;
+    }
+    .nav {
+      gap: 20px;
+    }
+    .main {
+      padding: 48px 16px 80px;
+    }
+    h1 {
+      margin-bottom: 48px;
+    }
+    .try {
+      margin-bottom: 56px;
+    }
+    .step {
+      margin-bottom: 56px;
+    }
+    .step-text {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    .slider-row {
+      padding: 0 42px;
+    }
+    .slider-arrow {
+      width: 32px;
+      height: 32px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <main class="main">
+
+    <div class="title">
+      <img src="icon64.svg"/>
+      <h1>Welcome to AI Email Assistant!</h1>
+    </div>
+
+    <div class="try">
+      <span class="try-label">Try it in</span>
+      <div class="try-links">
+        <a class="try-link" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" rel="noopener noreferrer">
+          <img class="try-icon" src="gmail.png" alt="Gmail" />
+          Gmail
+        </a>
+        <a class="try-link" href="https://outlook.live.com/mail/0/" target="_blank" rel="noopener noreferrer">
+          <img class="try-icon" src="outlook.png" alt="Outlook" />
+          Outlook
+        </a>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">
+        1. Open your email composer in Gmail or Outlook and click the magic wand icon.
+      </p>
+      <div class="slider-row">
+        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="slider">
+          <div class="slider-track">
+            <div class="slide">
+              <img src="gmail1.png" srcset="gmail1.png 1x, gmail1-2.png 2x" />
+            </div>
+            <div class="slide">
+              <img src="outlook1.png" srcset="outlook.png 1x, outlook1-2.png 2x"/>
+            </div>
+          </div>
+        </div>
+        <button class="slider-arrow slider-arrow--next" aria-label="Next image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">
+        2. Describe your email in a few words and press Enter.
+      </p>
+      <div class="slider-row">
+        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="slider">
+          <div class="slider-track">
+            <div class="slide">
+              <img src="gmail2.png" srcset="gmail2.png 1x, gmail2-2.png 2x" />
+            </div>
+            <div class="slide">
+              <img src="outlook2.png" srcset="outlook2.png 1x, outlook2-2.png 2x" />
+            </div>
+          </div>
+        </div>
+        <button class="slider-arrow slider-arrow--next" aria-label="Next image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">
+        3. Already have a draft? Just leave your text and tell the AI what to fix.
+      </p>
+      <div class="slider-row">
+        <div class="slider">
+          <div class="slide">
+            <img src="gmail3.png" srcset="gmail3.png 1x, gmail3-2.png 2x"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('.slider-row').forEach(function (row) {
+      var track = row.querySelector('.slider-track');
+      if (!track) return;
+      var count = row.querySelectorAll('.slide').length;
+      var index = 0;
+
+      function go(step) {
+        index = (index + step + count) % count;
+        track.style.transform = 'translateX(-' + index * 100 + '%)';
+      }
+
+      row.querySelector('.slider-arrow--prev').addEventListener('click', function () {
+        go(-1);
+      });
+      row.querySelector('.slider-arrow--next').addEventListener('click', function () {
+        go(1);
+      });
+    });
+  </script>
+
+</body>
+</html>
