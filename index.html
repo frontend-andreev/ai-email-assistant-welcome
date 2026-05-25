@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5WLNZH14QW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5WLNZH14QW');
+</script>
 <title>Welcome — AI Email Assistant</title>
 <link rel="icon" type="image/svg+xml" href="icon64.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="icon32.png">
@@ -309,22 +317,47 @@
   </main>
 
   <script>
-    document.querySelectorAll('.slider-row').forEach(function (row) {
+    document.querySelectorAll('.slider-row').forEach(function (row, rowIdx) {
+      var step = rowIdx + 1;
+
+      // Клик по самой картинке слайда — хотим понять, тыкают ли в неё как в интерфейс
+      row.querySelectorAll('.slide').forEach(function (slide, slideIdx) {
+        slide.addEventListener('click', function () {
+          var img = slide.querySelector('img');
+          var src = img ? (img.getAttribute('src') || '') : '';
+          if (typeof gtag === 'function') {
+            gtag('event', 'slider_image_click', {
+              step: step,
+              slide_index: slideIdx,
+              image: src
+            });
+          }
+        });
+      });
+
+      // Навигация слайдера (только в блоках со стрелками)
       var track = row.querySelector('.slider-track');
       if (!track) return;
+
       var count = row.querySelectorAll('.slide').length;
       var index = 0;
 
-      function go(step) {
-        index = (index + step + count) % count;
+      function go(s) {
+        index = (index + s + count) % count;
         track.style.transform = 'translateX(-' + index * 100 + '%)';
       }
 
       row.querySelector('.slider-arrow--prev').addEventListener('click', function () {
         go(-1);
+        if (typeof gtag === 'function') {
+          gtag('event', 'slider_navigate', { direction: 'prev', step: step });
+        }
       });
       row.querySelector('.slider-arrow--next').addEventListener('click', function () {
         go(1);
+        if (typeof gtag === 'function') {
+          gtag('event', 'slider_navigate', { direction: 'next', step: step });
+        }
       });
     });
   </script>
