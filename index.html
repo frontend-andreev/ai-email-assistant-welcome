@@ -58,6 +58,14 @@
     margin-right: 12px;
   }
 
+  .title-text {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    text-wrap: balance;
+    max-width: calc(100% - 60px);
+  }
+
   h1 {
     font-size: clamp(36px, 5vw, 52px);
     font-weight: 800;
@@ -245,7 +253,7 @@
     <div class="title">
       <h1>
         <img class="title-icon" src="icon64.svg" alt=""/>
-        <span data-i18n="h1">Welcome to AI Email Assistant!</span>
+        <span class="title-text" data-i18n="h1">Welcome to AI Email Assistant!</span>
       </h1>
     </div>
 
