@@ -244,7 +244,7 @@
 
     <div class="title">
       <img src="icon64.svg"/>
-      <h1>Welcome to AI Email Assistant!</h1>
+      <h1 data-i18n="h1">Welcome to AI Email Assistant!</h1>
     </div>
 
     <div class="try">
@@ -262,11 +262,11 @@
     </div>
 
     <div class="step">
-      <p class="step-text">
+      <p class="step-text" data-i18n="step1">
         1. Open your email composer in Gmail or Outlook and click the magic wand icon.
       </p>
       <div class="slider-row">
-        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image">
+        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image" data-i18n-aria="prev">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <div class="slider">
@@ -279,18 +279,18 @@
             </div>
           </div>
         </div>
-        <button class="slider-arrow slider-arrow--next" aria-label="Next image">
+        <button class="slider-arrow slider-arrow--next" aria-label="Next image" data-i18n-aria="next">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
     </div>
 
     <div class="step">
-      <p class="step-text">
+      <p class="step-text" data-i18n="step2">
         2. Describe your email in a few words and press Enter.
       </p>
       <div class="slider-row">
-        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image">
+        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image" data-i18n-aria="prev">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <div class="slider">
@@ -303,14 +303,14 @@
             </div>
           </div>
         </div>
-        <button class="slider-arrow slider-arrow--next" aria-label="Next image">
+        <button class="slider-arrow slider-arrow--next" aria-label="Next image" data-i18n-aria="next">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
     </div>
 
     <div class="step">
-      <p class="step-text">
+      <p class="step-text" data-i18n="step3">
         3. Already have a draft? Just leave your text and tell the AI what to fix.
       </p>
       <div class="slider-row">
@@ -325,6 +325,51 @@
   </main>
 
   <script>
+    // ===== i18n =====
+    var I18N = {
+      en: { title: "Welcome — AI Email Assistant", h1: "Welcome to AI Email Assistant!", tryIn: "Try it in", step1: "1. Open your email composer in Gmail or Outlook and click the magic wand icon.", step2: "2. Describe your email in a few words and press Enter.", step3: "3. Already have a draft? Just leave your text and tell the AI what to fix.", prev: "Previous image", next: "Next image" },
+      de: { title: "Willkommen — AI Email Assistant", h1: "Willkommen bei AI Email Assistant!", tryIn: "Ausprobieren in", step1: "1. Öffne den E-Mail-Editor in Gmail oder Outlook und klicke auf das Zauberstab-Symbol.", step2: "2. Beschreibe deine E-Mail in wenigen Worten und drücke Enter.", step3: "3. Hast du schon einen Entwurf? Lass deinen Text einfach stehen und sag der KI, was zu verbessern ist.", prev: "Vorheriges Bild", next: "Nächstes Bild" },
+      fr: { title: "Bienvenue — AI Email Assistant", h1: "Bienvenue sur AI Email Assistant !", tryIn: "Essayer sur", step1: "1. Ouvrez votre éditeur d'e-mail dans Gmail ou Outlook et cliquez sur l'icône de baguette magique.", step2: "2. Décrivez votre e-mail en quelques mots et appuyez sur Entrée.", step3: "3. Vous avez déjà un brouillon ? Laissez votre texte et dites à l'IA ce qu'il faut corriger.", prev: "Image précédente", next: "Image suivante" },
+      es: { title: "Bienvenido — AI Email Assistant", h1: "¡Bienvenido a AI Email Assistant!", tryIn: "Pruébalo en", step1: "1. Abre el editor de correo en Gmail u Outlook y haz clic en el ícono de la varita mágica.", step2: "2. Describe tu correo en pocas palabras y pulsa Enter.", step3: "3. ¿Ya tienes un borrador? Deja tu texto y dile a la IA qué corregir.", prev: "Imagen anterior", next: "Imagen siguiente" },
+      nl: { title: "Welkom — AI Email Assistant", h1: "Welkom bij AI Email Assistant!", tryIn: "Probeer in", step1: "1. Open de e-mail-editor in Gmail of Outlook en klik op het toverstaf-icoon.", step2: "2. Beschrijf je e-mail in een paar woorden en druk op Enter.", step3: "3. Heb je al een concept? Laat je tekst staan en vertel de AI wat er moet worden aangepast.", prev: "Vorige afbeelding", next: "Volgende afbeelding" },
+      id: { title: "Selamat datang — AI Email Assistant", h1: "Selamat datang di AI Email Assistant!", tryIn: "Coba di", step1: "1. Buka editor email di Gmail atau Outlook dan klik ikon tongkat ajaib.", step2: "2. Jelaskan email Anda dalam beberapa kata dan tekan Enter.", step3: "3. Sudah punya draf? Biarkan teks Anda dan beri tahu AI apa yang perlu diperbaiki.", prev: "Gambar sebelumnya", next: "Gambar berikutnya" },
+      ru: { title: "Добро пожаловать — AI Email Assistant", h1: "Добро пожаловать в AI Email Assistant!", tryIn: "Попробовать в", step1: "1. Откройте редактор письма в Gmail или Outlook и нажмите на иконку волшебной палочки.", step2: "2. Опишите письмо в нескольких словах и нажмите Enter.", step3: "3. Уже есть черновик? Просто оставьте текст и скажите ИИ, что исправить.", prev: "Предыдущее изображение", next: "Следующее изображение" },
+      pt: { title: "Bem-vindo — AI Email Assistant", h1: "Bem-vindo ao AI Email Assistant!", tryIn: "Experimente no", step1: "1. Abra o editor de e-mail no Gmail ou Outlook e clique no ícone da varinha mágica.", step2: "2. Descreva seu e-mail em poucas palavras e pressione Enter.", step3: "3. Já tem um rascunho? Deixe seu texto e diga à IA o que corrigir.", prev: "Imagem anterior", next: "Próxima imagem" },
+      ja: { title: "ようこそ — AI Email Assistant", h1: "AI Email Assistantへようこそ！", tryIn: "試してみる", step1: "1. GmailまたはOutlookでメール作成画面を開き、魔法の杖アイコンをクリック。", step2: "2. メールの内容を一言で説明し、Enterキーを押します。", step3: "3. すでに下書きがある？テキストはそのままに、AIに修正してほしい点を伝えるだけ。", prev: "前の画像", next: "次の画像" },
+      ko: { title: "환영합니다 — AI Email Assistant", h1: "AI Email Assistant에 오신 것을 환영합니다!", tryIn: "사용해 보기", step1: "1. Gmail이나 Outlook에서 이메일 작성 창을 열고 마법봉 아이콘을 클릭하세요.", step2: "2. 이메일 내용을 몇 단어로 설명하고 Enter 키를 누르세요.", step3: "3. 이미 초안이 있나요? 텍스트를 그대로 두고 AI에게 수정할 부분을 알려주세요.", prev: "이전 이미지", next: "다음 이미지" }
+    };
+
+    function pickLang() {
+      var supported = Object.keys(I18N);
+      // ?lang=xx override (for testing / direct links)
+      var urlLang = new URLSearchParams(window.location.search).get('lang');
+      if (urlLang && supported.indexOf(urlLang.toLowerCase()) !== -1) return urlLang.toLowerCase();
+      // browser language(s)
+      var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+      for (var i = 0; i < list.length; i++) {
+        var l = (list[i] || '').toLowerCase().split('-')[0];
+        if (supported.indexOf(l) !== -1) return l;
+      }
+      return 'en';
+    }
+
+    (function applyI18n() {
+      var lang = pickLang();
+      var t = I18N[lang];
+      if (!t) return;
+      document.documentElement.lang = lang;
+      if (t.title) document.title = t.title;
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+      });
+    })();
+
+    // ===== slider =====
     document.querySelectorAll('.slider-row').forEach(function (row, rowIdx) {
       var step = rowIdx + 1;
 
