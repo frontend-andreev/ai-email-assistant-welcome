@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>We're sorry to see you go — AI Email Assistant</title>
+<link rel="icon" type="image/svg+xml" href="../images/icon64.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/icon32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #ffffff;
+    color: #0a1e4d;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+    text-align: center;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .title img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #9ca3af;
+  }
+
+  h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .form-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(10, 30, 77, 0.12), 0 4px 12px rgba(10, 30, 77, 0.07);
+  }
+
+  .form-wrap iframe {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      padding: 40px 16px 72px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <main class="main">
+
+    <div class="title">
+      <img src="../images/icon64.svg" alt="AI Email Assistant" />
+      <span>AI Email Assistant</span>
+    </div>
+
+    <h1>We're sorry to see you go</h1>
+    <p class="subtitle">It'll take just a minute — your feedback helps us improve.</p>
+
+    <div class="form-wrap">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfNIlonJveYgT_6jzA7Jwob9whdYRrJ0TfRgXCj869M6_TWxA/viewform?embedded=true"
+        height="520"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Uninstall feedback"
+      >Loading…</iframe>
+    </div>
+
+  </main>
+
+</body>
+</html>
