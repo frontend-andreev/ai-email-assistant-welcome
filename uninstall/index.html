@@ -24,9 +24,9 @@
   }
 
   .main {
-    max-width: 680px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 64px 24px 100px;
+    padding: 24px 24px 24px;
     text-align: center;
   }
 
@@ -67,12 +67,12 @@
   .form-wrap {
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 12px 32px rgba(10, 30, 77, 0.12), 0 4px 12px rgba(10, 30, 77, 0.07);
   }
 
   .form-wrap iframe {
     display: block;
     width: 100%;
+    height: calc(100vh - 48px);
     border: none;
   }
 
@@ -86,14 +86,6 @@
 <body>
 
   <main class="main">
-
-    <div class="title">
-      <img src="../images/icon64.svg" alt="AI Email Assistant" />
-      <span>AI Email Assistant</span>
-    </div>
-
-    <h1>We're sorry to see you go</h1>
-    <p class="subtitle">It'll take just a minute — your feedback helps us improve.</p>
 
     <div class="form-wrap">
       <iframe
