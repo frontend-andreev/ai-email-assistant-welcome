@@ -137,79 +137,19 @@
     margin-right: auto;
   }
 
-  .slider-row {
-    position: relative;
-    padding: 0 52px;
-  }
-
-  .slider {
+  .instruction-image {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 12px 32px rgba(10, 30, 77, 0.18), 0 4px 12px rgba(10, 30, 77, 0.10);
   }
 
-  .slider-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .slide {
-    flex: 0 0 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f3f4f6;
-    color: #9ca3af;
-    font-size: 14px;
-  }
-
-  .slide img {
+  .instruction-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
   }
 
-  .slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 50%;
-    color: #0a1e4d;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(10, 30, 77, 0.10);
-    transition: background 0.2s ease, border-color 0.2s ease;
-  }
-
-  .slider-arrow--prev {
-    left: 0;
-  }
-
-  .slider-arrow--next {
-    right: 0;
-  }
-
-  .slider-arrow:hover {
-    background: #f3f4f6;
-    border-color: #d1d5db;
-  }
-
-  .slider-arrow:active {
-    transform: translateY(-50%) scale(0.92);
-  }
-
-  .slider-arrow svg {
-    width: 16px;
-    height: 16px;
+  .step:last-child {
+    margin-bottom: 0;
   }
 
   @media (max-width: 640px) {
@@ -235,13 +175,6 @@
     .step-text {
       font-size: 16px;
       margin-bottom: 24px;
-    }
-    .slider-row {
-      padding: 0 42px;
-    }
-    .slider-arrow {
-      width: 32px;
-      height: 32px;
     }
   }
 </style>
@@ -272,26 +205,20 @@
     </div>
 
     <div class="step">
-      <p class="step-text" data-i18n="step2">
-        Just describe your email and press Enter!
+      <p class="step-text" data-i18n="step1">
+        Gmail instructions
       </p>
-      <div class="slider-row">
-        <button class="slider-arrow slider-arrow--prev" aria-label="Previous image" data-i18n-aria="prev">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <div class="slider">
-          <div class="slider-track">
-            <div class="slide">
-              <img src="images/gmail2.png" srcset="images/gmail2.png 1x, images/gmail2-2.png 2x" />
-            </div>
-            <div class="slide">
-              <img src="images/outlook2.png" srcset="images/outlook2.png 1x, images/outlook2-2.png 2x" />
-            </div>
-          </div>
-        </div>
-        <button class="slider-arrow slider-arrow--next" aria-label="Next image" data-i18n-aria="next">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
+      <div class="instruction-image">
+        <img src="images/gmail2.png" srcset="images/gmail2.png 1x, images/gmail2-2.png 2x" alt="Gmail instructions" />
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="step-text" data-i18n="step2">
+        Outlook instructions
+      </p>
+      <div class="instruction-image">
+        <img src="images/outlook2.png" srcset="images/outlook2.png 1x, images/outlook2-2.png 2x" alt="Outlook instructions" />
       </div>
     </div>
   </main>
@@ -299,16 +226,16 @@
   <script>
     // ===== i18n =====
     var I18N = {
-      en: { title: "Welcome — AI Email Assistant", h1: "Welcome to AI Email Assistant!", tryIn: "Try it in", step1: "1. Open your email composer in Gmail or Outlook and click the magic wand icon.", step2: "Open the compose window and describe your email", prev: "Previous image", next: "Next image" },
-      de: { title: "Willkommen — AI Email Assistant", h1: "Willkommen bei AI Email Assistant!", tryIn: "Ausprobieren in", step1: "1. Öffne den E-Mail-Editor in Gmail oder Outlook und klicke auf das Zauberstab-Symbol.", step2: "Öffne das Fenster zum Verfassen einer E-Mail und beschreibe deine E-Mail", step3: "3. Hast du schon einen Entwurf? Lass deinen Text einfach stehen und sag der KI, was zu verbessern ist.", prev: "Vorheriges Bild", next: "Nächstes Bild" },
-      fr: { title: "Bienvenue — AI Email Assistant", h1: "Bienvenue sur AI Email Assistant !", tryIn: "Essayer sur", step1: "1. Ouvrez votre éditeur d'e-mail dans Gmail ou Outlook et cliquez sur l'icône de baguette magique.", step2: "Ouvrez la fenêtre de rédaction et décrivez votre e-mail", step3: "3. Vous avez déjà un brouillon ? Laissez votre texte et dites à l'IA ce qu'il faut corriger.", prev: "Image précédente", next: "Image suivante" },
-      es: { title: "Bienvenido — AI Email Assistant", h1: "¡Bienvenido a AI Email Assistant!", tryIn: "Pruébalo en", step1: "1. Abre el editor de correo en Gmail u Outlook y haz clic en el ícono de la varita mágica.", step2: "Abre la ventana de redacción y describe tu correo", step3: "3. ¿Ya tienes un borrador? Deja tu texto y dile a la IA qué corregir.", prev: "Imagen anterior", next: "Imagen siguiente" },
-      nl: { title: "Welkom — AI Email Assistant", h1: "Welkom bij AI Email Assistant!", tryIn: "Probeer in", step1: "1. Open de e-mail-editor in Gmail of Outlook en klik op het toverstaf-icoon.", step2: "Open het venster voor het opstellen van een e-mail en beschrijf je e-mail", step3: "3. Heb je al een concept? Laat je tekst staan en vertel de AI wat er moet worden aangepast.", prev: "Vorige afbeelding", next: "Volgende afbeelding" },
-      id: { title: "Selamat datang — AI Email Assistant", h1: "Selamat datang di AI Email Assistant!", tryIn: "Coba di", step1: "1. Buka editor email di Gmail atau Outlook dan klik ikon tongkat ajaib.", step2: "Buka jendela penulisan email dan jelaskan email Anda", step3: "3. Sudah punya draf? Biarkan teks Anda dan beri tahu AI apa yang perlu diperbaiki.", prev: "Gambar sebelumnya", next: "Gambar berikutnya" },
-      ru: { title: "Добро пожаловать — AI Email Assistant", h1: "Добро пожаловать в AI Email Assistant!", tryIn: "Попробовать в", step1: "1. Откройте редактор письма в Gmail или Outlook и нажмите на иконку волшебной палочки.", step2: "Откройте окно создания письма и опишите своё письмо", step3: "3. Уже есть черновик? Просто оставьте текст и скажите ИИ, что исправить.", prev: "Предыдущее изображение", next: "Следующее изображение" },
-      pt: { title: "Bem-vindo — AI Email Assistant", h1: "Bem-vindo ao AI Email Assistant!", tryIn: "Experimente no", step1: "1. Abra o editor de e-mail no Gmail ou Outlook e clique no ícone da varinha mágica.", step2: "Abra a janela de composição e descreva seu e-mail", step3: "3. Já tem um rascunho? Deixe seu texto e diga à IA o que corrigir.", prev: "Imagem anterior", next: "Próxima imagem" },
-      ja: { title: "ようこそ — AI Email Assistant", h1: "AI Email Assistantへようこそ！", tryIn: "試してみる", step1: "1. GmailまたはOutlookでメール作成画面を開き、魔法の杖アイコンをクリック。", step2: "メール作成画面を開いて、メールの内容を説明してください", step3: "3. すでに下書きがある？テキストはそのままに、AIに修正してほしい点を伝えるだけ。", prev: "前の画像", next: "次の画像" },
-      ko: { title: "환영합니다 — AI Email Assistant", h1: "AI Email Assistant에 오신 것을 환영합니다!", tryIn: "사용해 보기", step1: "1. Gmail이나 Outlook에서 이메일 작성 창을 열고 마법봉 아이콘을 클릭하세요.", step2: "이메일 작성 창을 열고 이메일 내용을 설명하세요", step3: "3. 이미 초안이 있나요? 텍스트를 그대로 두고 AI에게 수정할 부분을 알려주세요.", prev: "이전 이미지", next: "다음 이미지" }
+      en: { title: "Welcome — AI Email Assistant", h1: "Welcome to AI Email Assistant!", tryIn: "Try it in", step1: "Gmail instructions", step2: "Outlook instructions" },
+      de: { title: "Willkommen — AI Email Assistant", h1: "Willkommen bei AI Email Assistant!", tryIn: "Ausprobieren in", step1: "Anleitung für Gmail", step2: "Anleitung für Outlook" },
+      fr: { title: "Bienvenue — AI Email Assistant", h1: "Bienvenue sur AI Email Assistant !", tryIn: "Essayer sur", step1: "Instructions pour Gmail", step2: "Instructions pour Outlook" },
+      es: { title: "Bienvenido — AI Email Assistant", h1: "¡Bienvenido a AI Email Assistant!", tryIn: "Pruébalo en", step1: "Instrucciones para Gmail", step2: "Instrucciones para Outlook" },
+      nl: { title: "Welkom — AI Email Assistant", h1: "Welkom bij AI Email Assistant!", tryIn: "Probeer in", step1: "Instructies voor Gmail", step2: "Instructies voor Outlook" },
+      id: { title: "Selamat datang — AI Email Assistant", h1: "Selamat datang di AI Email Assistant!", tryIn: "Coba di", step1: "Panduan untuk Gmail", step2: "Panduan untuk Outlook" },
+      ru: { title: "Добро пожаловать — AI Email Assistant", h1: "Добро пожаловать в AI Email Assistant!", tryIn: "Попробовать в", step1: "Инструкция для Gmail", step2: "Инструкция для Outlook" },
+      pt: { title: "Bem-vindo — AI Email Assistant", h1: "Bem-vindo ao AI Email Assistant!", tryIn: "Experimente no", step1: "Instruções para o Gmail", step2: "Instruções para o Outlook" },
+      ja: { title: "ようこそ — AI Email Assistant", h1: "AI Email Assistantへようこそ！", tryIn: "試してみる", step1: "Gmailの使い方", step2: "Outlookの使い方" },
+      ko: { title: "환영합니다 — AI Email Assistant", h1: "AI Email Assistant에 오신 것을 환영합니다!", tryIn: "사용해 보기", step1: "Gmail 사용 안내", step2: "Outlook 사용 안내" }
     };
 
     function pickLang() {
@@ -335,56 +262,7 @@
         var key = el.getAttribute('data-i18n');
         if (t[key] !== undefined) el.textContent = t[key];
       });
-      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
-        var key = el.getAttribute('data-i18n-aria');
-        if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
-      });
     })();
-
-    // ===== slider =====
-    document.querySelectorAll('.slider-row').forEach(function (row, rowIdx) {
-      var step = rowIdx + 1;
-
-      // Клик по самой картинке слайда — хотим понять, тыкают ли в неё как в интерфейс
-      row.querySelectorAll('.slide').forEach(function (slide, slideIdx) {
-        slide.addEventListener('click', function () {
-          var img = slide.querySelector('img');
-          var src = img ? (img.getAttribute('src') || '') : '';
-          if (typeof gtag === 'function') {
-            gtag('event', 'slider_image_click', {
-              step: step,
-              slide_index: slideIdx,
-              image: src
-            });
-          }
-        });
-      });
-
-      // Навигация слайдера (только в блоках со стрелками)
-      var track = row.querySelector('.slider-track');
-      if (!track) return;
-
-      var count = row.querySelectorAll('.slide').length;
-      var index = 0;
-
-      function go(s) {
-        index = (index + s + count) % count;
-        track.style.transform = 'translateX(-' + index * 100 + '%)';
-      }
-
-      row.querySelector('.slider-arrow--prev').addEventListener('click', function () {
-        go(-1);
-        if (typeof gtag === 'function') {
-          gtag('event', 'slider_navigate', { direction: 'prev', step: step });
-        }
-      });
-      row.querySelector('.slider-arrow--next').addEventListener('click', function () {
-        go(1);
-        if (typeof gtag === 'function') {
-          gtag('event', 'slider_navigate', { direction: 'next', step: step });
-        }
-      });
-    });
   </script>
 
 </body>
